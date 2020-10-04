@@ -50,7 +50,7 @@ function parse(str) {
   if (str.length > 100) {
     return;
   }
-  var match = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(
+  var match = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|милисекунды?|милисекунд?|милисекунда?|msecs?|милисек?|ms|мс|seconds?|secs?|секунд?|секунды?|секунда?|сек?|s|с|minutes?|mins?|мин?|минуты?|минута?|минут?|m|м|hours?|hrs?|часов?|часа?|час?|h|ч|days?|дня?|день?|дней?|d|д|недели?|неделя?|недель?|weeks?|w|н|years?|yrs?|года?|лет?|г|y)?$/i.exec(
     str
   );
   if (!match) {
@@ -60,10 +60,14 @@ function parse(str) {
   var type = (match[2] || 'ms').toLowerCase();
   switch (type) {
     case 'years':
+    case 'года':
+    case 'лет':
     case 'year':
+    case 'год':
     case 'yrs':
     case 'yr':
     case 'y':
+    case 'г':
       return n * y;
     case 'weeks':
     case 'week':
