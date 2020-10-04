@@ -70,36 +70,63 @@ function parse(str) {
     case 'г':
       return n * y;
     case 'weeks':
+    case 'недель':
+    case 'недели':
     case 'week':
+    case 'неделя':
     case 'w':
+    case 'н':
       return n * w;
     case 'days':
+    case 'дней':
+    case 'дня':
     case 'day':
+    case 'день':
     case 'd':
+    case 'д':
       return n * d;
     case 'hours':
+    case 'часов':
     case 'hour':
     case 'hrs':
+    case 'часа':
     case 'hr':
+    case 'час':
     case 'h':
+    case 'ч':
       return n * h;
     case 'minutes':
+    case 'минуты':
     case 'minute':
+    case 'минута':
     case 'mins':
+    case 'минут':
     case 'min':
+    case 'мин':
     case 'm':
+    case 'м':
       return n * m;
     case 'seconds':
+    case 'секунд':
     case 'second':
+    case 'секунда':
     case 'secs':
+    case 'секунды':
     case 'sec':
+    case 'сек':
     case 's':
+    case 'с':
       return n * s;
     case 'milliseconds':
+    case 'милисекунды':
+    case 'милисекунд':
     case 'millisecond':
+    case 'милисекунда':
     case 'msecs':
     case 'msec':
+    case 'мсек':
     case 'ms':
+    case 'мс':
       return n;
     default:
       return undefined;
