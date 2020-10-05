@@ -196,8 +196,8 @@ function plural(ms, msAbs, n, name) {
  * Pluralization helper Russian.
  */
 
-function pluralr(ms, n, one, two, five) {
-  var number = Math.round(ms / n);
+function pluralr(ms, t, one, two, five) {
+  var number = Math.round(ms / t);
   let n = Math.abs(number);
   n %= 100;
   if (n >= 5 && n <= 20) {
