@@ -175,10 +175,10 @@ function fmtLong(ms) {
     return pluralr(ms, h, 'час', 'часа', 'часов');
   }
   if (msAbs >= m) {
-    return pluralr(ms, m, 'минут', 'минута', 'минуты');
+    return pluralr(ms, m, 'минута', 'минуты', 'минут');
   }
   if (msAbs >= s) {
-    return pluralr(ms, s, 'секунд', 'секунда', 'секунды');
+    return pluralr(ms, s, 'секунда', 'секунды', 'секунд');
   }
   return ms + ' мс';
 }
@@ -201,14 +201,14 @@ function pluralr(ms, t, one, two, five) {
   let n = Math.abs(number);
   n %= 100;
   if (n >= 5 && n <= 20) {
-    return five;
+    return number + ' ' + five;
   }
   n %= 10;
   if (n === 1) {
-    return one;
+    return number + ' ' + one;
   }
   if (n >= 2 && n <= 4) {
-    return two;
+    return number + ' ' + two;
   }
-  return five;
+  return number + ' ' + five;
 }
