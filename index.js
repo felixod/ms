@@ -144,18 +144,18 @@ function parse(str) {
 function fmtShort(ms) {
   var msAbs = Math.abs(ms);
   if (msAbs >= d) {
-    return Math.round(ms / d) + 'd';
+    return Math.round(ms / d) + 'д';
   }
   if (msAbs >= h) {
-    return Math.round(ms / h) + 'h';
+    return Math.round(ms / h) + 'ч';
   }
   if (msAbs >= m) {
-    return Math.round(ms / m) + 'm';
+    return Math.round(ms / m) + 'м';
   }
   if (msAbs >= s) {
-    return Math.round(ms / s) + 's';
+    return Math.round(ms / s) + 'с';
   }
-  return ms + 'ms';
+  return ms + 'мс';
 }
 
 /**
@@ -169,18 +169,18 @@ function fmtShort(ms) {
 function fmtLong(ms) {
   var msAbs = Math.abs(ms);
   if (msAbs >= d) {
-    return plural(ms, msAbs, d, 'day');
+    return plural(ms, msAbs, d, 'день');
   }
   if (msAbs >= h) {
-    return plural(ms, msAbs, h, 'hour');
+    return plural(ms, msAbs, h, 'час');
   }
   if (msAbs >= m) {
-    return plural(ms, msAbs, m, 'minute');
+    return plural(ms, msAbs, m, 'минута');
   }
   if (msAbs >= s) {
-    return plural(ms, msAbs, s, 'second');
+    return plural(ms, msAbs, s, 'секунда');
   }
-  return ms + ' ms';
+  return ms + ' мс';
 }
 
 /**
