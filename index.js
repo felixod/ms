@@ -169,16 +169,16 @@ function fmtShort(ms) {
 function fmtLong(ms) {
   var msAbs = Math.abs(ms);
   if (msAbs >= d) {
-    return plural(ms, msAbs, d, 'день');
+    return pluralr(4, 'слон', 'слона', 'слонов'));
   }
   if (msAbs >= h) {
-    return plural(ms, msAbs, h, 'час');
+    return pluralr(ms, h, 'час', 'часа', 'часов');
   }
   if (msAbs >= m) {
-    return plural(ms, msAbs, m, 'минута');
+    return pluralr(ms, m, 'минут', 'минута', 'минуты');
   }
   if (msAbs >= s) {
-    return plural(ms, msAbs, s, 'секунда');
+    return pluralr(ms, s, 'секунд', 'секунда', 'секунды');
   }
   return ms + ' мс';
 }
@@ -190,4 +190,25 @@ function fmtLong(ms) {
 function plural(ms, msAbs, n, name) {
   var isPlural = msAbs >= n * 1.5;
   return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
+}
+
+/**
+ * Pluralization helper Russian.
+ */
+
+function pluralr(ms, n, one, two, five) {
+  var number = Math.round(ms / n);
+  let n = Math.abs(number);
+  n %= 100;
+  if (n >= 5 && n <= 20) {
+    return five;
+  }
+  n %= 10;
+  if (n === 1) {
+    return one;
+  }
+  if (n >= 2 && n <= 4) {
+    return two;
+  }
+  return five;
 }
