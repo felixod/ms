@@ -169,7 +169,7 @@ function fmtShort(ms) {
 function fmtLong(ms) {
   var msAbs = Math.abs(ms);
   if (msAbs >= d) {
-    return pluralr(4, 'слон', 'слона', 'слонов'));
+    return pluralr(ms, d, 'день', 'дня', 'дней');
   }
   if (msAbs >= h) {
     return pluralr(ms, h, 'час', 'часа', 'часов');
